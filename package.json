@@ -1,0 +1,35 @@
+{
+  "devDependencies": {
+    "parcel": "^2.10.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "babel-plugin-macros": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "name": "foodordering_react",
+  "version": "1.0.0",
+  "description": "food app",
+  "scripts": {
+    "devbuild": "parcel index.html",
+    "productionbuild": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SudharsunRavi/FoodOrdering_React.git"
+  },
+  "keywords": [
+    "food",
+    "namastereact",
+    "reactjs",
+    "react"
+  ],
+  "author": "Sudharsun Ravisankar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SudharsunRavi/FoodOrdering_React/issues"
+  },
+  "homepage": "https://github.com/SudharsunRavi/FoodOrdering_React#readme"
+}
