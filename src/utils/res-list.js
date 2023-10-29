@@ -1,27 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-
-const Header=()=>{
-    return (
-        <div className="header">
-
-            <div className="logo-container">
-                <img className="logo" src="https://img.freepik.com/premium-vector/kitchen-chef-logo-design-vector-template_15146-1164.jpg?w=900"></img>
-            </div>
-
-            <div className="navBar">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-            
-        </div>
-    )
-}
-
 const resList=[
     {
       "info": {
@@ -2150,49 +2126,4 @@ const resList=[
     }
 ]
 
-const ResContainer=(props)=>{
-
-    const {resData}=props //obj destructing
-    const {cloudinaryImageId, name, cuisines, costForTwo, avgRating}=resData.info //obj destructing
-
-    return(
-        <div className="res-card">
-            <img className="res-img" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId}></img>
-            <h3>{name}</h3>
-            <p>{cuisines.join(', ')}</p>
-            <p>{costForTwo}</p>
-            <p>{avgRating}</p>
-        </div>
-    )
-}
-
-const Body=()=>{
-    return(
-        <div className="body">
-            <div className="search-bar">
-                Search
-            </div>
-
-            <div className="res-container">
-                    {
-                        resList.map((restaurant)=>(
-                            <ResContainer key={restaurant.info.id} resData={restaurant}/>
-                        ))
-                    }
-            </div>
-        </div>
-    )
-    
-}
-
-const AppLayout=()=>{
-    return (
-        <div className="appLayout">
-            <Header/>
-            <Body />
-        </div>
-    )
-};
-
-const root=ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppLayout/>);
+export default resList
