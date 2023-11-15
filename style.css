@@ -46,3 +46,30 @@
 .res-img{
     width: 100%;
 }
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 40px;
+}
+
+.shimmer-card{
+    width: 250px;
+    padding: 10px;
+    color: #0f0f0f;
+}
+
+.login-btn{
+    margin: 0 10px;
+    padding: 5px;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.top-rated-btn{
+    padding: 5px;
+    margin: 0 90px;
+}
