@@ -3,6 +3,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import resList from "../utils/res-list"
 import ShimmerUI from "./shimmer"
+import { Link } from "react-router-dom"
 
 const Body=()=>{
 
@@ -15,7 +16,7 @@ const Body=()=>{
     }, []);
 
     const fetchData = async () => {
-        const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
+        const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9647462&lng=80.19608319999999&page_type=DESKTOP_WEB_LISTING");
         const jsonData=await data.json();
 
         const restaurant_list = "restaurant_grid_listing";
@@ -29,7 +30,7 @@ const Body=()=>{
 
     const TopRatedResList = () => {
         let topRatedRes = listOfRes.filter((restaurant) => restaurant.info.avgRating > 4);
-        setListOfRes(topRatedRes);
+        setFilterRes(topRatedRes);
     };
 
     const filterResList = () =>{
@@ -59,7 +60,9 @@ const Body=()=>{
             <div className="res-container">
                     {
                         filterRes.map((restaurant)=>(
-                            <ResContainer key={restaurant.info.id} resData={restaurant}/>
+                            <Link to={"/restaurants/"+restaurant.info.id}>
+                                <ResContainer key={restaurant.info.id} resData={restaurant}/>
+                            </Link>
                         ))
                     }
             </div>
