@@ -6,12 +6,12 @@ const ResContainer=(props)=>{
     const {cloudinaryImageId, name, cuisines, costForTwo, avgRating}=resData.info //obj destructing
 
     return(
-        <div className="res-card">
-            <img className="res-img" src={RES_IMG + cloudinaryImageId}></img>
-            <h3>{name}</h3>
+        <div className="my-5 w-[350px] h-[375px] bg-slate-50 rounded-lg p-5 hover:bg-gray-200">
+            <img className="w-[300px] rounded-lg" src={RES_IMG + cloudinaryImageId}></img>
+            <h3 className="font-bold text-lg py-2">{name}</h3>
             <p>{cuisines.join(', ')}</p>
             <p>{costForTwo}</p>
-            <p>{avgRating}</p>
+            <p>⭐ {avgRating}</p>
         </div>
     )
 }
