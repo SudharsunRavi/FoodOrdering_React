@@ -1,42 +1,18 @@
 import ResContainer from "./res-container"
-import { useState } from "react"
-import { useEffect } from "react"
-import resList from "../utils/res-list"
+import useRestaurant from "../utils/useRestaurant"
 import ShimmerUI from "./shimmer"
 import { Link } from "react-router-dom"
+import useOnlineStatus from "../utils/useOnlineStatus"
 
 const Body=()=>{
+    const {listOfRes, filterRes, searchRes, setSearchRes, filterResList, TopRatedResList}=useRestaurant();
+    const onlineStatus = useOnlineStatus();
 
-    const [listOfRes, setListOfRes] = useState(resList); //list of restaurants
-    const [filterRes, setFilterRes] = useState([]); //filter restaurants
-    const [searchRes, setSearchRes] = useState(""); //search for restaurants
-
-    useEffect(()=>{
-        fetchData();
-    }, []);
-
-    const fetchData = async () => {
-        const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9647462&lng=80.19608319999999&page_type=DESKTOP_WEB_LISTING");
-        const jsonData=await data.json();
-
-        const restaurant_list = "restaurant_grid_listing";
-        const restaurantCard = jsonData?.data?.cards?.find(
-            (card) => card.card.card.id === restaurant_list
-        );
-        const restaurantData = restaurantCard?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-        setListOfRes(restaurantData);
-        setFilterRes(restaurantData);
-    };
-
-    const TopRatedResList = () => {
-        let topRatedRes = listOfRes.filter((restaurant) => restaurant.info.avgRating > 4);
-        setFilterRes(topRatedRes);
-    };
-
-    const filterResList = () =>{
-        let filteredRes = listOfRes.filter((restaurant) => restaurant.info.name.toLowerCase().includes(searchRes.toLowerCase()));
-        setFilterRes(filteredRes);
-    };
+    if (onlineStatus === false) {
+        return (
+                    <h2>Check your internet connection</h2>
+        )
+    }
 
     return listOfRes.length === 0 ? <ShimmerUI /> :(
         <div className="body">
@@ -60,7 +36,8 @@ const Body=()=>{
             <div className="res-container">
                     {
                         filterRes.map((restaurant)=>(
-                            <Link to={"/restaurants/"+restaurant.info.id}>
+                            //urlParams-> site.com/restaurants/resID
+                            <Link to={"/restaurants/"+restaurant.info.id}>    
                                 <ResContainer key={restaurant.info.id} resData={restaurant}/>
                             </Link>
                         ))

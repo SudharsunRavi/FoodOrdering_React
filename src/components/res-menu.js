@@ -1,22 +1,9 @@
-import { useState, useEffect } from "react";
-import Shimmer from "./shimmer";
-import { MENU_API } from "../utils/constants";
 import { useParams } from "react-router-dom";
+import useResMenu  from "../utils/useResMenu";
 
 const ResMenu=()=>{
-    const [resMenu, setResMenu]=useState(null);
-
     const {resID} = useParams();
-
-    const fetchMenu=async()=>{
-        const data=await fetch(MENU_API+resID)
-        const jsonData=await data.json();
-        setResMenu(jsonData.data);
-    }
-
-    useEffect(()=>{
-       fetchMenu(); 
-    },[])
+    const resMenu = useResMenu(resID); //custom hook in utils folder
 
     const {name, costForTwoMessage, avgRating, cuisines} = resMenu?.cards[0]?.card?.card?.info || {}; //res details destructing
     const { itemCards } = resMenu?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card || {}; //menu items destructing

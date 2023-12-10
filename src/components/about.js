@@ -1,3 +1,5 @@
+import UserCard from './user-card-classComp'
+
 const About = () => {
     return (
         <div>
