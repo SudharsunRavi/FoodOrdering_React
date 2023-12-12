@@ -8,7 +8,7 @@ const MenuItems=({items})=>{
                     <div className="flex justify-between">
                         <span className="text-lg">{item.card.info.name} <br /> ₹{item.card.info.price/100}</span>
                         <div>
-                            <span><img src={RES_IMG + item.card.info.id} className="w-[100px] h-auto" /></span>
+                            <span><img src={RES_IMG + item.card.info.imageId} className="w-[100px] h-auto" /></span>
                             <button className="absolute right-[512px] text-sm border border-gray-500 cursor-pointer rounded-lg mt-1 p-1 text-white bg-black">ADD</button>
                         </div>
                     </div>
