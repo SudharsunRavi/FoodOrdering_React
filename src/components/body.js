@@ -15,8 +15,8 @@ const Body=()=>{
     }
 
     return listOfRes.length === 0 ? <ShimmerUI /> :(
-        <div className="p-4 m-4">
-            <div className="flex justify-between">
+        <div className="p-4 m-16">
+            <div className="flex justify-between mb-10">
                 <div>
                     <input type="text" 
                         className="border-2 border-gray-400 px-2 py-0.5 rounded-xl" 
@@ -37,12 +37,12 @@ const Body=()=>{
                 </div>
             </div>
         
-            <div className="flex flex-wrap justify-between">
+            <div className="flex flex-wrap justify-start">
                     {
                         filterRes.map((restaurant)=>(
                             //urlParams-> site.com/restaurants/resID
-                            <Link to={"/restaurants/"+restaurant.info.id}>    
-                                <ResContainer key={restaurant.info.id} resData={restaurant}/>
+                            <Link to={"/restaurants/"+restaurant.info.id} key={restaurant.info.id}>    
+                                {<ResContainer resData={restaurant}/>}
                             </Link>
                         ))
                     }
