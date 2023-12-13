@@ -1,8 +1,8 @@
-import ResContainer from "./res-container"
-import useRestaurant from "../utils/useRestaurant"
-import ShimmerUI from "./shimmer"
+import ResContainer from "./ResContainer"
+import useRestaurant from "../utils/custom_hooks/useRestaurant"
+import ShimmerUI from "./ResShimmer"
 import { Link } from "react-router-dom"
-import useOnlineStatus from "../utils/useOnlineStatus"
+import useOnlineStatus from "../utils/custom_hooks/useOnlineStatus"
 
 const Body=()=>{
     const {listOfRes, filterRes, searchRes, setSearchRes, filterResList, TopRatedResList}=useRestaurant();

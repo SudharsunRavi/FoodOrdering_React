@@ -1,4 +1,4 @@
-import MenuItems from "./menu-items"
+import MenuItems from "./MenuItems"
 
 const ResCategory=({data, showItems, setShowItems})=>{
     const accordionClicked=()=>{

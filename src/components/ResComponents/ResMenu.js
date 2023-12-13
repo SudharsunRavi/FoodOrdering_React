@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import useResMenu  from "../utils/useResMenu";
-import ShimmerUI from "./shimmer"
-import ResCategory from "./res-category";
+import useResMenu  from "../../utils/custom_hooks/useResMenu";
+import ShimmerUI from "./ResShimmer"
+import ResCategory from "./ResCategory";
 import { useState } from "react";
 
 const ResMenu=()=>{

@@ -1,4 +1,4 @@
-import {RES_IMG} from '../utils/constants'
+import {RES_IMG} from '../../utils/constants'
 
 const ResContainer=(props)=>{
 

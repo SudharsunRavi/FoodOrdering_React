@@ -1,7 +1,7 @@
 import { LOGO_URL } from "../utils/constants"
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import useOnlineStatus from "../utils/useOnlineStatus"
+import useOnlineStatus from "../utils/custom_hooks/useOnlineStatus"
 import { useSelector } from "react-redux"
 import Cart from "./Cart"
 

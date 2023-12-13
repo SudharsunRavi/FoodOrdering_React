@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { RES_API } from "./constants";
+import { RES_API } from "../constants";
 
 const useRestaurant=()=>{
     const [listOfRes, setListOfRes] = useState(0); //list of restaurants
