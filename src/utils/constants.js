@@ -11,3 +11,5 @@ export const EMPTY_CART_IMG=require("../images/cart.png");
 export const CONTACT_US_IMG=require("../images/contact.png")
 
 export const ERROR_IMG=require("../images/error.png")
+
+export const OFFLINE_IMG=require("../images/offline.png")

@@ -3,6 +3,7 @@ import useRestaurant from "../utils/custom_hooks/useRestaurant"
 import ShimmerUI from "./ResComponents/ResShimmer"
 import { Link } from "react-router-dom"
 import useOnlineStatus from "../utils/custom_hooks/useOnlineStatus"
+import { OFFLINE_IMG } from "../utils/constants"
 
 const Body=()=>{
     const {listOfRes, filterRes, searchRes, setSearchRes, filterResList, TopRatedResList}=useRestaurant();
@@ -10,7 +11,10 @@ const Body=()=>{
 
     if (onlineStatus === false) {
         return (
-                    <h2>Check your internet connection</h2>
+            <>
+                <img src={OFFLINE_IMG} className="w-3/12 mx-auto" />
+                <h2 className="w-3/12 mx-auto text-center text-2xl font-poppins font-semibold my-6">Check your internet connection</h2>
+            </>     
         )
     }
 
