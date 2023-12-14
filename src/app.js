@@ -23,23 +23,6 @@ const AppLayout=()=>{
     )
 };
 
-// const appRouter = createBrowserRouter([
-//     {
-//         path: '/',
-//         element : <AppLayout/>,
-//         errorElement : <Error/>
-//     },
-//     {
-//         path: '/about',
-//         element : <About/>,
-//         errorElement : <Error/>
-//     },
-//     {
-//         path: '/contact',
-//         element : <Contact/>,
-//         errorElement : <Error/>
-//     }
-// ])
 
 const appRouter = createBrowserRouter([
     {
