@@ -13,14 +13,14 @@ const MenuItems=({items})=>{
     return(
         <div>
             {items.map((item)=>(
-                <div key={item.card.info.id} className="m-2 p-2 border-b-2 border-gray-300">
+                <div key={item.card.info.id} className="m-2 p-2 border-b-2 border-gray-300 font-poppins">
                     <div className="flex justify-between">
-                        <span className="text-lg">{item.card.info.name} <br /> ₹{item.card.info.price/100}</span>
+                        <span className="text-lg font-medium">{item.card.info.name} <br /> ₹{item.card.info.price/100}</span>
                         <div>
-                            <span><img src={RES_IMG + item.card.info.imageId} className="w-[100px] h-auto" /></span>
-                            <button className="absolute right-[512px] text-sm border border-gray-500 cursor-pointer rounded-lg mt-1 p-1 text-white bg-black"
+                            <span><img src={RES_IMG + item.card.info.imageId} className="w-[150px] h-auto rounded-lg" /></span>
+                            <button className="absolute right-[530px] text-sm border cursor-pointer rounded-lg mt-1 p-1 text-white bg-orange-500  hover:border-orange-500 hover:bg-white hover:text-orange-500"
                                     onClick={()=>addItemCart(item)}
-                            >ADD</button>
+                            >ADD</button><br/>
                         </div>
                     </div>
                     <p className="text-sm text-gray-400 mt-6 ">{item.card.info.description}</p>

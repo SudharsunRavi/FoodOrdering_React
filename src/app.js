@@ -8,7 +8,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Cart from './components/Cart';
 import Error from './components/Error';
-import ResMenu from './components/ResMenu';
+import ResMenu from './components/ResComponents/ResMenu';
 
 import { Provider } from 'react-redux';
 import cartStore from './utils/redux_cart/cartStore';
@@ -50,10 +50,6 @@ const appRouter = createBrowserRouter([
             {
                 path: '/',
                 element : <Body />,
-            },
-            {
-                path: '/about',
-                element : <About/>,
             },
             {
                 path: '/contact',

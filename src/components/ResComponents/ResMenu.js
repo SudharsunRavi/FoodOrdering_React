@@ -21,10 +21,12 @@ const ResMenu=()=>{
     );
     
     return(
-        <div className="m-12">
+        <div className="w-6/12 mx-auto mt-6 mb-12 p-4 font-poppins">
+            <p className="font-semibold text-2xl float-right">⭐{avgRating}</p>
             <h3 className="font-bold text-2xl mb-5 ">{name}</h3>
-            <p className="font-semibold text-lg">{cuisines} - ⭐{avgRating}</p>
+            <p className="font-semibold text-lg">{cuisines}</p>
             <p className="font-semibold text-md">{costForTwoMessage}</p>
+            <br/>
             <ul>
                 {
                     categories.map((category, index)=>(
